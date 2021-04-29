@@ -16,9 +16,13 @@ const START_LOCS = [
 	{ pos: new Vector2(200, 150), dir: new Vector2(1, 0) },
 	{ pos: new Vector2(1150, 600), dir: new Vector2(-1, 0) },
 	{ pos: new Vector2(200, 600), dir: new Vector2(1, 0) },
-	{ pos: new Vector2(1150, 150), dir: new Vector2(-1, 0) }
+	{ pos: new Vector2(1150, 150), dir: new Vector2(-1, 0) },
+	{ pos: new Vector2(300, 250), dir: new Vector2(1, 0) },
+	{ pos: new Vector2(1000, 650), dir: new Vector2(-1, 0) },
+	{ pos: new Vector2(250, 550), dir: new Vector2(1, 0) },
+	{ pos: new Vector2(1200, 200), dir: new Vector2(-1, 0) }
 ];
-const COLORS = ["RED", "BLUE", "YELLOW", "GREEN"];
+const COLORS = ["RED", "BLUE", "YELLOW", "GREEN", "RED", "BLUE", "YELLOW", "GREEN", "RED", "BLUE", "YELLOW", "GREEN"];
 
 class Game {
 	constructor(
@@ -230,7 +234,7 @@ class Game {
 	gameOver() {}
 
 	addPlayer(playerId, socket, playerTag, gameId) {
-		if (this.players.length === 4 || this.started) {
+		if (this.players.length === 10 || this.started) {
 			this.playerSockets[playerId] = socket;
 			return { gameId, spectator: true };
 		}
